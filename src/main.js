@@ -17,13 +17,19 @@ $(document).ready(function() {
       const response = await docSearch.findDoc(name);
 
       for(let i = 0; i < response.data.length; i++) {
-        output += JSON.stringify(response.data[i].profile)+ "<br>";
+        output += JSON.stringify("First Name: "+response.data[i].profile.first_name +
+                                  ", Last Name: "+response.data[i].profile.last_name +
+                                  ", Address: "+response.data[i].practices[0].visit_address.street + " "
+                                  +response.data[i].practices[0].visit_address.city + " "
+                                  +response.data[i].practices[0].visit_address.zip +
+                                  ", Phone: "+response.data[i].practices[0].phones[0].number +
+                                  ", Accepts New Patients (Yes=True, No=False): "+response.data[i].practices[0].accepts_new_patients)+ "<br>";
       }
       getElements(response);
     })();
 
     function getElements(response) {
-      $('#solution').text(output);
+      $('#solution').html(output);
     }
 
   });
