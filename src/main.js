@@ -23,8 +23,14 @@ $(document).ready(function() {
                                   +response.data[i].practices[0].visit_address.city + " "
                                   +response.data[i].practices[0].visit_address.zip +
                                   ", Phone: "+response.data[i].practices[0].phones[0].number +
+                                  ", Website: "+response.data[i].practices[0].website +
                                   ", Accepts New Patients (Yes=True, No=False): "+response.data[i].practices[0].accepts_new_patients)+ "<br>";
       }
+
+      if(response.data.length < 1) {
+        output = "Sorry, no doctors within those search parameters have been found.";
+      }
+
       getElements(response);
     })();
 
