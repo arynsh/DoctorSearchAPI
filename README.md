@@ -50,3 +50,5 @@ Copyright (c) 2019 Sharon Lee
 4. If the API call results in an error, the program will state what the error is.
   Input: [API url]
   Output: 404 Page Not Found
+
+![](https://media.giphy.com/media/TKmIXSnx5sLlu/giphy-downsized.gif)
