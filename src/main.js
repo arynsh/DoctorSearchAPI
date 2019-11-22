@@ -16,8 +16,9 @@ $(document).ready(function() {
       let docSearch = new DoctorSearch();
       const response = await docSearch.findDoc(name);
 
-      output += JSON.stringify(response.data[0].profile)+ "<br>";
-
+      for(let i = 0; i < response.data.length; i++) {
+        output += JSON.stringify(response.data[i].profile)+ "<br>";
+      }
       getElements(response);
     })();
 
