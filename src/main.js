@@ -8,17 +8,18 @@ $(document).ready(function() {
   $('#').submit(function(event) {
     event.preventDefault();
 
-    const medIssue = $('#medIssue').val();
+    let name = $('#name').val();
+
 
     (async () => {
-      let findDoc = new findDoc();
-      const response = await findDoc.getDoc(city);
+      let docSearch = new DoctorSearch();
+      const response = await docSearch.getDoc(name);
       getElements(response);
     })();
-
-    function getElements(response) {
-      $('.').text();
-    }
+    //
+    // function getElements(response) {
+    //   $('.').text();
+    // }
 
   });
 });
