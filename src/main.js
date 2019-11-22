@@ -2,10 +2,10 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css'
-import {  } from './../src/doctors.js';
+import { DoctorSearch } from './../src/doctors.js';
 
 $(document).ready(function() {
-  $('#').submit(function(event) {
+  $('#formID').submit(function(event) {
     event.preventDefault();
 
     let name = $('#name').val();
@@ -13,13 +13,13 @@ $(document).ready(function() {
 
     (async () => {
       let docSearch = new DoctorSearch();
-      const response = await docSearch.getDoc(name);
+      const response = await docSearch.findDoc(name);
       getElements(response);
     })();
-    //
-    // function getElements(response) {
-    //   $('.').text();
-    // }
+
+    function getElements(response) {
+      $('#solution').text(response);
+    }
 
   });
 });

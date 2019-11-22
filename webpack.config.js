@@ -18,13 +18,13 @@ module.exports = {
   plugins: [
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
-    new Dotenv(),
     new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       title: 'DoctorsAPI',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv(),
   ],
   module: {
     rules: [
