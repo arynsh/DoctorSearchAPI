@@ -9,16 +9,20 @@ $(document).ready(function() {
     event.preventDefault();
 
     let name = $('#name').val();
+    let output = "";
 
 
     (async () => {
       let docSearch = new DoctorSearch();
       const response = await docSearch.findDoc(name);
+
+      output += JSON.stringify(response.data[0].profile)+ "<br>";
+
       getElements(response);
     })();
 
     function getElements(response) {
-      $('#solution').text(response);
+      $('#solution').text(output);
     }
 
   });
