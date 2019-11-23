@@ -33,11 +33,8 @@ $(document).ready(function() {
       if(response.data.length < 1) {
         output = "Sorry, no doctors within those search parameters have been found.";
       }
-
       getElements(response);
-    })();
 
-    (async () => {
       let symptomSearch = new MedicalSearch();
       const symptomresponse = await symptomSearch.searchUsingSymptom(symptom);
 
@@ -58,6 +55,8 @@ $(document).ready(function() {
 
       getSymptomElements(symptomresponse);
     })();
+
+
 
     function getElements(response) {
       $('#docresults').html(output);
