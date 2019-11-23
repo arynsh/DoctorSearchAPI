@@ -23,7 +23,7 @@ export class DoctorSearch {
 export class MedicalSearch {
   async searchUsingSymptom(symptom) {
     try {
-      let symptomresponse = await fetch(`https://api.betterdoctor.com/2016-03-01/doctors?query=headache&location=wa-seattle&skip=0&limit=10&user_key=e8292159f22748656f5b0e504d1bf521`);
+      let symptomresponse = await fetch(`https://api.betterdoctor.com/2016-03-01/doctors?query=headache&location=wa-seattle&skip=0&limit=10&user_key=${process.env.API_KEY}`);
         if (symptomresponse.status === 400) {
           throw Error ("Error 400- Bad request or missing parameters.");
         }
