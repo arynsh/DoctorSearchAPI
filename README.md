@@ -1,12 +1,12 @@
 # Doctor Search API
 
-#### A program that returns a list of Doctors in Seattle based on users' conditions. 11/22/2019
+#### A program that returns a list of doctors in the Seattle area based on users' conditions or by doctor name. 11/22/2019
 
 #### By Sharon Lee
 
 ## Description
 
-This is a program will allow the user to input their medical issue (e.g. rash, cough, cold)
+This is a program will allow the user to input their medical issue (e.g. rash, cough, cold) and return a list of doctors in Seattle who treat the issue. Alternatively, users may input a name (first, last, or partial) and the program will return a list of doctors in the Seattle area who have that name.
 
 ## Setup/Installation Requirements
 
